@@ -1,0 +1,1418 @@
+body {
+    background-color: rgb(240, 249, 248);
+    overflow-x: hidden;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+/* loading */
+
+#loading {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+#loadingLeft {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(249, 209, 219);
+    display: block;
+    /* transition-delay: 6s; */
+    transition-duration: 1s;
+}
+
+#loadingRight {
+    width: 50%;
+    height: 100%;
+    background-color: rgb(249, 209, 219);
+    display: block;
+    /* transition-delay: 6s; */
+    transition-duration: 1s;
+
+}
+
+#loadingBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    transition: 1s;
+}
+
+#loadingLine {
+    width: 181px;
+    height: 21px;
+    overflow: hidden;
+    padding-top: 20px;
+}
+
+#loadingLine div {
+    animation-name: loadingLine;
+    animation-duration: 1.3s;
+    animation-iteration-count: infinite;
+    width: 181px;
+    height: 1px;
+    border: 1px solid #000;
+}
+
+@keyframes loadingLine {
+    0% {
+        transform: translateX(-181px);
+    }
+
+    100% {
+        transform: translateX(181px);
+    }
+}
+
+/* cover */
+#cover {
+    width: 100vw;
+    height: 85vh;
+    object-fit: contain;
+    display: none;
+    overflow: hidden;
+    position: relative;
+}
+
+#coverText {
+    position: absolute;
+    z-index: 1;
+    width: 100vw;
+    height: 85vh;
+    background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s_mobile.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    animation-name: coverText;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#coverLeftBar {
+    position: fixed;
+    top: 50%;
+    left: 0%;
+    transform: translateY(-50%);
+    margin-left: 15px;
+}
+
+#coverLeftBar img {
+    padding-left: 7px;
+    padding-bottom: 3px;
+}
+
+#coverLeftBar a {
+    padding-bottom: 2px;
+    display: block;
+}
+
+.coverLeftBarButton2:hover .a {
+    fill: antiquewhite
+}
+
+.coverLeftBarButton1:hover .a {
+    fill: antiquewhite
+}
+
+#coverRightBar {
+    position: fixed;
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    margin-right: 15px;
+}
+
+#coverTopBar {
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#coverTopBar td {
+    border-left: 1px solid #FF4E3C;
+    text-align: center;
+}
+
+#coverTopBar td a:hover {
+    color: #ff4e3c;
+}
+
+#coverTopBar td:nth-child(1) {
+    border-left: none;
+}
+
+#coverTopBarLeft td:nth-child(1) a {
+    color: #FF4E3C;
+}
+
+#coverTopBarRight td:nth-child(1) {
+    border-left: 1px solid #FF4E3C;
+}
+
+#coverTopBar a {
+    font-weight: bold;
+    color: #3b59bb;
+}
+
+#coverTopBar a:visited {
+    color: #3b59bb;
+}
+
+#coverTopBarLeft a {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#coverTopBarRight a {
+    text-decoration: none;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+#coverBottomBar {
+    position: absolute;
+    bottom: 0%;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 15px;
+    transition: 0.5s;
+}
+
+#coverBottomBar:hover {
+    margin-bottom: 5px;
+}
+
+#coverBottomBar:hover .a {
+    fill: azure
+}
+
+@keyframes coverText {
+    0% {
+        background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s_mobile.png');
+    }
+
+    25% {
+        background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_2_s_mobile.png');
+    }
+
+    50% {
+        background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_2_s_mobile.png');
+    }
+
+    75% {
+        background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s_mobile.png');
+    }
+
+    100% {
+        background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s_mobile.png');
+
+    }
+}
+
+#coverLeft {
+    width: 50%;
+    position: relative;
+}
+
+#coverLeft img {
+    width: 272.5px;
+    height: calc(272.5px * 2.96518987);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    animation-name: coverLeft;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+
+}
+
+#coverLeft img:nth-child(2) {
+    top: calc(50% + 272.5px * 2.96518987);
+}
+
+#coverLeft img:nth-child(3) {
+    top: calc(50% + 545px * 2.96518987);
+}
+
+#coverRight {
+    width: 50%;
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+#coverRight img {
+    width: 272.5px;
+    height: calc(272.5px * 2.96518987);
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    animation-name: coverRight;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
+
+#coverRight img:nth-child(2) {
+    top: calc(50% - 272.5px * 2.96518987);
+}
+
+#coverRight img:nth-child(3) {
+    top: calc(50% - 545px * 2.96518987);
+}
+
+@keyframes coverLeft {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    25% {
+        transform: translateY(calc(-50% + -272.5px * 2.96518987));
+    }
+
+    50% {
+        transform: translateY(calc(-50% + -272.5px * 2.96518987));
+    }
+
+    75% {
+        transform: translateY(calc(-50% + -545px * 2.96518987));
+    }
+
+    100% {
+        transform: translateY(calc(-50% + -545px * 2.96518987));
+
+    }
+}
+
+@keyframes coverRight {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    25% {
+        transform: translateY(calc(-50% + 272.5px * 2.96518987));
+    }
+
+    50% {
+        transform: translateY(calc(-50% + 272.5px * 2.96518987));
+    }
+
+    75% {
+        transform: translateY(calc(-50% + 545px * 2.96518987));
+    }
+
+    100% {
+        transform: translateY(calc(-50% + 545px * 2.96518987));
+    }
+}
+
+/* aboutUs */
+#aboutContainer {
+    padding-top: 50px;
+    color: #0722a6;
+    overflow-x: hidden;
+}
+
+#aboutUs h1 {
+    margin: 0px 40px 40px 40px;
+    font-family: futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
+    font-weight: 700;
+    font-size: 43px;
+}
+
+.aboutBox {
+    margin-bottom: 125px;
+}
+
+.aboutBoxReverse {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+.aboutBoxLeft {
+    padding-left: 40px;
+    padding-right: 40px;
+    color: #0722a6;
+}
+
+.aboutBoxHead {
+    display: flex;
+    justify-content: start;
+}
+
+.aboutBoxHeadNomber {
+    margin-right: 10px;
+    text-decoration: underline;
+    text-decoration-color: #ff5f4a;
+}
+
+.aboutBoxHeadText {
+    margin-right: 20px;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.aboutBoxCircles {
+    width: 33px;
+    height: 6px;
+    display: flex;
+    margin-top: 16px;
+}
+
+.aboutBoxCircles div {
+    margin-right: 5px;
+    width: 6px;
+    right: 6px;
+    border-radius: 50% 50%;
+    border: 1px solid #0722a6;
+    display: inline-block;
+    position: unset;
+}
+
+.blueCircles {
+    background-color: #0722a6;
+}
+
+.aboutBoxSpan {
+    margin-top: 17px;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.aboutBoxSpan2 {
+    margin: 30px 0;
+    display: block;
+}
+
+.aboutBoxTouchBlock {
+    margin: 30px 0;
+    display: none;
+}
+
+.aboutBoxTouchBlock2 {
+    margin: 30px 0;
+    display: none;
+}
+
+.aboutBoxReadMore {
+    display: flex;
+    justify-content: end;
+}
+
+.aboutBoxReadMore:hover .Ra {
+    fill: #FF4E3C;
+}
+
+.aboutBoxReadMore:hover .Rb {
+    fill: #FF4E3C;
+}
+
+.aboutBoxRight {
+    margin-top: 45px;
+    padding-right: 40px;
+    display: flex;
+    justify-content: end;
+}
+
+.aboutBoxRightChange {
+    margin-top: 45px;
+    padding-left: 40px;
+    display: flex;
+    justify-content: start;
+}
+
+.colorBox {
+    width: calc(100vw - 40px);
+    height: calc(100vw - 40px);
+    background-color: #0722a6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    ;
+}
+
+.blue {
+    background-color: #0722a6;
+}
+
+.orange {
+    background-color: #FF4E3C;
+}
+
+.lightgreen {
+    background-color: #d3e2e3;
+}
+
+.colorBoxLine1 {
+    width: 1px;
+    height: 43px;
+    border: 1px solid #0722a6;
+    background-color: #0722a6;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 0;
+}
+
+.colorBoxLine2 {
+    width: 1px;
+    height: 43px;
+    border: 1px solid #0722a6;
+    background-color: #0722a6;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    bottom: -43px;
+}
+
+.colorBoxImg {
+    width: calc(100vw - 120px);
+    height: calc(100vw - 120px);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.img1 {
+    background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_about_image_1.jpg');
+}
+
+.img2 {
+    background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_about_image_2.jpg');
+}
+
+.img3 {
+    background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_about_image_3.jpg');
+}
+
+/* clients */
+#clients {
+    margin-top: 110px;
+    padding: 60px 40px;
+    background: #0722a6;
+}
+
+#clients h2 {
+    color: #FF5F4A;
+    font-size: 43px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 60px;
+    line-height: 1;
+}
+
+.clientsGroup {
+    max-width: 700px;
+    margin: auto;
+}
+
+.clientsText {
+    color: #ffdcd1;
+    font-size: 12px;
+    margin-bottom: 33px;
+    padding-right: 10px;
+
+}
+
+.clientsText::after {
+    content: '';
+    width: 9px;
+    height: 1px;
+    display: block;
+    background-color: #ffdcd1;
+    margin-top: 3px;
+
+}
+
+/* company */
+/* companyRight */
+#company {
+    display: flex;
+    flex-direction: row-reverse;
+    font-family: dnp-shuei-gothic-gin-std, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Osaka, "ＭＳ Ｐゴシック", sans-serif;
+}
+
+#companyRight {
+    padding: 60px 40px 0px 45px;
+}
+
+#companyRight h2 {
+    font-weight: 700;
+    line-height: 1;
+    font-size: 38px;
+    color: #FF4E3C;
+    font-family: futura-pt, dnp-shuei-gothic-gin-std, sans-serif;
+}
+
+#companyName {
+    margin-top: 46px;
+}
+
+#companyNameJP,
+#companyNameEN {
+    color: #0722a6;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+#conpanyInfo {
+    margin-top: 20px;
+    padding-top: 17px;
+    font-family: dnp-shuei-gothic-gin-std, "游ゴシック体", "Yu Gothic", YuGothic, "Hiragino Kaku Gothic ProN", Osaka, "ＭＳ Ｐゴシック", sans-serif;
+    font-size: 15px;
+    color: #0722a6;
+    position: relative;
+    display: flex;
+    justify-content: start;
+}
+
+#conpanyInfo::after {
+    content: '';
+    height: 1px;
+    width: 45px;
+    background-color: #FF4E3C;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#conpanyInfoLeft {
+    display: inline-block;
+    width: 120px;
+    height: 63px;
+}
+
+#conpanyInfoLeft span {
+    display: block;
+}
+
+#conpanyInfoRight {
+    display: inline-block;
+}
+
+#companyBusinessDomain {
+    margin-top: 80px;
+}
+
+#companyBusinessDomain h3 {
+    font-weight: 700;
+    font-size: 34px;
+    line-height: 1.1;
+    color: #0722a6;
+}
+
+.companyTitle {
+    margin-top: 40px;
+    color: #0722a6;
+}
+
+#companyBusinessDomainContent {
+    margin-top: 20px;
+    padding-top: 32px;
+    position: relative;
+}
+
+#companyBusinessDomainContent::after {
+    content: '';
+    height: 1px;
+    width: 45px;
+    background-color: #FF4E3C;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+.DomainContentText {
+    margin-bottom: 39px;
+}
+
+.DomainContentTextTop {
+    display: flex;
+    flex-direction: column;
+}
+
+.DomainContentTextTopTitleNumber {
+    margin-right: 10px;
+    text-decoration: underline;
+    text-decoration-color: #ff5f4a;
+    color: #0722a6;
+    display: inline;
+    font-weight: 700;
+}
+
+.DCTNSpan {
+    padding-right: 20px;
+    color: #0722a6;
+    font-weight: 700;
+}
+
+.DCCircles {
+    margin-top: 10px;
+    width: 50px;
+}
+
+.DomainContentTextContent {
+    margin-top: 15px;
+    color: #1F23D5;
+    font-weight: 500;
+}
+
+#companyBusinessContents {
+    margin-top: 80px;
+}
+
+#companyBusinessContents h3 {
+    color: #0722a6;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.1
+}
+
+#companyBusinessContentsGroup {
+    margin-top: 20px;
+    padding-top: 46px;
+    position: relative;
+}
+
+#companyBusinessContentsGroup::before {
+    content: '';
+    height: 1px;
+    width: 45px;
+    background-color: #FF4E3C;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+
+#companyBusinessContentsText {
+    padding-right: 10px;
+    margin-bottom: 33px;
+}
+
+.BCTextContainer {
+    margin-top: 11px;
+}
+
+.BCTText {
+    padding: 1px 10px;
+    border: 1px solid #0722a6;
+    color: #0722a6;
+    border-radius: 20px;
+    font-weight: 700;
+}
+
+.BCText {
+    position: relative;
+    color: #1F23D5;
+    margin-bottom: 4px;
+    left: 15px;
+}
+
+.BCText::before {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #FF4E3C;
+    content: '';
+    top: 50%;
+    left: -10px;
+}
+
+/* conpanyRight */
+#companyLeft {
+    margin-top: 30px;
+    padding-bottom: 69px;
+    position: relative;
+    background-color: #d3e2e3;
+}
+
+#companyLeft::before {
+    position: absolute;
+    width: 100%;
+    height: 140px;
+    content: '';
+    background: #f0f9f8;
+
+}
+
+#companyImg {
+    background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_company_left.jpg');
+    margin-right: 50px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 97%;
+    position: relative;
+
+}
+
+#companySns {
+    padding: 16px 40px 0px;
+    display: flex;
+    justify-content: end;
+}
+
+#companySnsIcon {
+    padding-left: 10px;
+}
+
+#companySnsTitle {
+    font-weight: 700;
+    color: #0722a6;
+}
+
+.companySnsIcon1:hover .CSIa {
+    fill: #FF4E3C
+}
+
+.companySnsIcon2:hover .CSIa {
+    fill: #FF4E3C
+}
+
+/* finalContent */
+
+#finalContent {
+    background-color: #0722a6;
+    padding: 60px 20px 50px;
+    text-align: center;
+}
+
+.finalContentLi {
+    margin-bottom: 57px;
+}
+
+.finalContentTextEn {
+    font-size: 17px;
+    color: #ffd2bf;
+    margin: 15px 0 5px 0;
+    font-weight: 700;
+}
+
+.finalContentTextJp {
+    font-size: 14px;
+    color: #ffd2bf;
+}
+
+#finalContentLinkText {
+    margin: 72px 60px 0;
+    flex-shrink: unset;
+}
+
+#finalContentLinkTextImg {
+    margin: auto;
+    width: 22.14px;
+    padding-bottom: 20px;
+}
+
+#FClinkText {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#FCText {
+    color: #ffd2bf;
+    font-size: 14px;
+
+}
+
+#FClink {
+    color: #ffd2bf;
+    font-size: 14px;
+}
+
+#FClink a {
+    color: #fff;
+    text-decoration: underline;
+    text-decoration-color: #FF4E3C;
+}
+
+#FClink a:hover {
+    text-decoration: none;
+}
+
+#FClink a:visited {
+    color: #fff;
+}
+
+/* footer */
+#footer {
+    padding: 40px;
+    position: relative;
+}
+
+#footerTitle {
+    color: #FF4E3C;
+    font-size: 14px;
+}
+
+#footerRow {
+    border-top: 1px solid #FF4E3C;
+    padding-top: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+}
+
+.footerCol {
+    width: 50%;
+}
+
+.footerCol:nth-child(odd) {
+    border-right: 1px solid #FF4E3C;
+}
+
+.footerCol a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #FF4E3C;
+    font-weight: 700;
+}
+
+.footerCol a:hover {
+    color: #1F23D5;
+}
+
+#footerBottom {
+    display: flex;
+    flex-direction: column;
+}
+
+#footerBottomUp {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#footerBottomUp a {
+    font-weight: 700;
+    font-size: 10px;
+    color: #FF4E3C;
+    text-decoration: none;
+    padding-right: 10px;
+}
+
+#footerBottomUp a:hover {
+    color: #0722a6;
+}
+
+#footerBottomDown {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#footerBottomText {
+    font-size: 10px;
+    color: #FF4E3C;
+    font-weight: 700;
+}
+
+#footerBottomImg {
+    position: relative;
+    padding: 4px;
+    border: 1px solid #000;
+}
+
+#footerBottomImg::after {
+    position: absolute;
+    bottom: -24px;
+    left: 0;
+    content: 'IS 728821 / ISO 27001';
+    font-size: 6px;
+}
+
+#footerBottomImg img {
+    width: 130px;
+}
+
+#footerTicon {
+    position: absolute;
+    bottom: 45px;
+    right: 5px;
+    transition-duration: 1s;
+}
+
+#footerTicon:hover {
+    transform: translateY(-30%);
+}
+
+#footerTicon:hover .FTa {
+    fill: #0722a6;
+}
+
+@media(min-width:545px) {
+    #coverLeft img {
+        width: 100%;
+        height: calc(50vw * 2.96518987);
+    }
+
+    #coverLeft img:nth-child(2) {
+        top: calc(50% + 50vw * 2.96518987);
+    }
+
+    #coverLeft img:nth-child(3) {
+        top: calc(50% + 100vw * 2.96518987);
+    }
+
+    #coverRight img {
+        width: 100%;
+        height: calc(50vw * 2.96518987);
+    }
+
+    #coverRight img:nth-child(2) {
+        top: calc(50% - 50vw * 2.96518987);
+    }
+
+    #coverRight img:nth-child(3) {
+        top: calc(50% - 100vw * 2.96518987);
+    }
+
+    @keyframes coverLeft {
+        0% {
+            transform: translateY(-50%);
+        }
+
+        25% {
+            transform: translateY(calc(-50% + -50vw * 2.96518987));
+        }
+
+        50% {
+            transform: translateY(calc(-50% + -50vw * 2.96518987));
+        }
+
+        75% {
+            transform: translateY(calc(-50% + -100vw * 2.96518987));
+        }
+
+        100% {
+            transform: translateY(calc(-50% + -100vw * 2.96518987));
+
+        }
+    }
+
+    @keyframes coverRight {
+        0% {
+            transform: translateY(-50%);
+        }
+
+        25% {
+            transform: translateY(calc(-50% + 50vw * 2.96518987));
+        }
+
+        50% {
+            transform: translateY(calc(-50% + 50vw * 2.96518987));
+        }
+
+        75% {
+            transform: translateY(calc(-50% + 100vw * 2.96518987));
+        }
+
+        100% {
+            transform: translateY(calc(-50% + 100vw * 2.96518987));
+        }
+    }
+
+    #coverText {
+        background-size: 544px;
+        /* background-position: center; */
+        background-position-x: center;
+    }
+}
+
+@media(min-width:667px) {
+    #coverLeft img {
+        width: 762px;
+        height: 100%;
+    }
+
+    #coverLeft img:nth-child(2) {
+        top: calc(50% + 100%);
+    }
+
+    #coverLeft img:nth-child(3) {
+        top: calc(50% + 200%);
+    }
+
+    @keyframes coverLeft {
+        0% {
+            transform: translateY(-50%);
+        }
+
+        25% {
+            transform: translateY(calc(-50% + -100%));
+        }
+
+        50% {
+            transform: translateY(calc(-50% + -100%));
+        }
+
+        75% {
+            transform: translateY(calc(-50% + -200%));
+        }
+
+        100% {
+            transform: translateY(calc(-50% + -200%));
+
+        }
+    }
+
+    #coverRight img {
+        width: 762px;
+        height: 100%;
+    }
+
+    #coverRight img:nth-child(2) {
+        top: calc(50% - 100%);
+    }
+
+    #coverRight img:nth-child(3) {
+        top: calc(50% - 200%);
+    }
+
+    @keyframes coverRight {
+        0% {
+            transform: translateY(-50%);
+        }
+
+        25% {
+            transform: translateY(calc(-50% + 100%));
+        }
+
+        50% {
+            transform: translateY(calc(-50% + 100%));
+        }
+
+        75% {
+            transform: translateY(calc(-50% + 200%));
+        }
+
+        100% {
+            transform: translateY(calc(-50% + 200%));
+
+        }
+    }
+
+    #cover {
+        height: 100vh;
+    }
+
+    #coverText {
+        height: 100vh;
+    }
+
+    #coverText {
+        background-position-y: center;
+        background-size: contain;
+    }
+
+    @keyframes coverText {
+        0% {
+            background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s.png');
+        }
+
+        25% {
+            background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_2_s.png');
+        }
+
+        50% {
+            background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_2_s.png');
+        }
+
+        75% {
+            background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s.png');
+        }
+
+        100% {
+            background-image: url('https://drame.tokyo/wp/wp-content/themes/drame/assets/images/top_slide_text_1_s.png');
+
+        }
+    }
+
+    #coverTopBar {
+        justify-content: space-around;
+    }
+
+    #coverTopBarRight td:nth-child(1) {
+        border-left: unset;
+    }
+}
+
+@media (min-width:768px) {
+    .aboutBoxRight {
+        padding-right: 20px;
+        margin: unset;
+    }
+
+    .colorBox {
+        width: calc(30vw);
+        height: calc(30vw * 1.6128021);
+    }
+
+    .colorBoxImg {
+        width: calc(30vw - 100px);
+        height: calc(30vw * 1.6128021 - 160px);
+
+    }
+
+    .companyTitle {
+        margin-top: 10px;
+    }
+
+}
+
+@media (min-width:770px) {
+    #aboutContainer {
+        padding: 95px 127px 0px 127px;
+    }
+
+    #aboutBox01 {
+        margin-bottom: 225px;
+    }
+
+    .aboutBoxLeft {
+        padding: unset;
+    }
+
+    #aboutUs h1 {
+        margin: 0px 0px 124px 0px;
+    }
+
+    #clients {
+        padding: 93px 70px 72px 70px;
+    }
+
+    .clientsText {
+        padding-right: 15px;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    #companyRight {
+        padding: 85px 65px 0px;
+    }
+
+    #companyRight h2 {
+        font-size: 43px;
+    }
+
+    #companyName {
+        margin-top: 20px;
+    }
+
+    #conpanyInfoLeft {
+        width: 235px;
+        height: 42px;
+    }
+
+    #conpanyInfoLeft span {
+        display: inline;
+    }
+
+    #companyBusinessDomain {
+        margin-top: 95px;
+    }
+
+    #companyBusinessDomainContent {
+        margin-top: 14px;
+        padding-top: 20px;
+        position: relative;
+    }
+
+    .DomainContentText {
+        margin-bottom: 49px;
+        position: relative;
+        margin-left: 80px;
+
+    }
+
+    .DomainContentTextTop {
+        flex-direction: row;
+    }
+
+    #companyBusinessContents {
+        margin-top: 140px;
+    }
+
+    #companyBusinessContentsGroup {
+        margin-top: 14px;
+        padding-top: 30px;
+    }
+
+    #companyBusinessContentsText {
+        padding-right: 20px;
+        margin-bottom: 66px;
+    }
+
+    #companyLeft {
+        margin: unset;
+        padding: unset;
+    }
+
+    #companyImg {
+        padding-top: 142%;
+        margin: unset;
+    }
+
+    #companySns {
+        padding: 53px 0px 0px 85px;
+        flex-direction: column;
+    }
+
+    #companySnsIcon {
+        padding: 5px 0 0;
+    }
+
+    .companySnsIcon1 {
+        padding-right: 15px;
+    }
+
+    #finalContent {
+        padding: 94px 60px 74px;
+    }
+
+    .finalContentTextEn {
+        margin: 40px 0 5px 0;
+    }
+
+    #finalContentLinkText {
+        margin: 40px 80px 0;
+    }
+
+    #FClinkText {
+        flex-direction: row;
+        justify-content: end;
+
+    }
+
+    #finalContentLinkTextImg {
+        margin: unset;
+        width: unset;
+        padding: unset;
+    }
+
+    #footer {
+        padding: 40px 70px;
+    }
+
+    #footerRow {
+        padding-top: 15px;
+        flex-wrap: nowrap;
+
+    }
+
+    .footerCol {
+        width: 20%;
+        border-right: 1px solid #FF4E3C;
+    }
+
+    .footerCol a {
+        font-weight: 500;
+    }
+
+    .footerCol:nth-child(5) {
+        border: none;
+    }
+
+    #footerBottom {
+        margin-top: 50px;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+
+    #footerBottomText {
+        margin-right: 15px;
+    }
+
+    #footerBottomUp {
+        flex-direction: row;
+    }
+
+    #footerTicon {
+        bottom: 90px;
+        right: 5px;
+    }
+}
+
+@media(min-width:1200px) {
+    .colorBox {
+        height: calc(30vw * 1.09998513);
+    }
+
+    .colorBoxImg {
+        height: calc(30vw * 1.09998513 - 160px);
+    }
+
+    #companyRight {
+        padding: 85px 85px 0px;
+    }
+}
+
+@media (min-width:1515px) {
+    .colorBox {
+        width: 510.69px;
+        height: 611.75px;
+    }
+
+    .colorBoxImg {
+        width: 410.69px;
+        height: 451.75px;
+    }
+
+    #aboutContainer {
+        width: 1500px;
+        margin: auto;
+
+
+    }
+}
+
+@media(min-width:1570px) {
+    #coverLeft img {
+        width: 100%;
+        height: calc(50vw * 1.20254777);
+    }
+
+    #coverLeft img:nth-child(2) {
+        top: calc(50% + 50vw * 1.20254777);
+    }
+
+    #coverLeft img:nth-child(3) {
+        top: calc(50% + 100vw * 1.20254777);
+    }
+
+
+    #coverRight img {
+        width: 100%;
+        height: calc(50vw * 1.20254777);
+    }
+
+    #coverRight img:nth-child(2) {
+        top: calc(50% - 50vw * 1.20254777);
+    }
+
+    #coverRight img:nth-child(3) {
+        top: calc(50% - 100vw * 1.20254777);
+    }
+}
